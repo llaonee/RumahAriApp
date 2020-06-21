@@ -1,0 +1,2 @@
+rootProject.name='Bame App'
+include ':app'
