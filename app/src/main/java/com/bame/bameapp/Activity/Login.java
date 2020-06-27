@@ -1,8 +1,5 @@
 package com.bame.bameapp.Activity;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 
 import com.bame.bameapp.BaseApp;
 import com.bame.bameapp.Http.ApiService;
@@ -20,6 +19,7 @@ import com.bame.bameapp.R;
 
 import java.util.List;
 
+import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -28,12 +28,19 @@ public class Login extends BaseApp {
 
     String username,password;
     EditText etPassword, etUsername;
+//    @BindView(R.id.etUsername)
+//    EditText etUsername;
+//    @BindView((R.id.etPassword))
+//    EditText etPassword;
     Button bLogin;
+//    @BindView(R.id.bLogin)
+//    Button btnSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+//        ButterKnife.bind(this);
 
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
@@ -46,7 +53,9 @@ public class Login extends BaseApp {
                 password = etPassword.getText().toString();
                 if (username.isEmpty() || password.isEmpty()){
                     Toast.makeText(getApplicationContext(),"kagak boleh kosong goblok", Toast.LENGTH_SHORT).show();
+                    Log.d("response login : ", "kagak boleh kosong goblok" + username + " "+ password);
                 }else {
+                    Log.d("response login : ", " goblok " + username + " "+ password);
                     ApiService api = ConfigRetrofit.getInstanceRetrofit();
                     Call<ResponseLogin> call = api.action_login(username, password);
                     call.enqueue(new Callback<ResponseLogin>() {
@@ -80,9 +89,7 @@ public class Login extends BaseApp {
                         @Override
                         public void onFailure(Call<ResponseLogin> call, Throwable t) {
 
-//                    Log.d("error login : ", t.getCause().toString());
-
-
+                            Log.d("error login : ", String.valueOf(t.getCause()));
                         }
                     });
                 }
@@ -90,4 +97,8 @@ public class Login extends BaseApp {
         });
 
     }
+    @OnClick(R.id.bLogin)
+    public void onViewClicked() {
+    }
+
 }

@@ -4,6 +4,7 @@ package com.bame.bameapp.Http;
 
 
 import com.bame.bameapp.Model.ResponseLogin;
+import com.bame.bameapp.Model.ResponsePintu;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -21,5 +22,11 @@ public interface ApiService {
     Call<ResponseLogin> action_login(
             @Field("username") String username,
             @Field("password") String password
+    );
+
+    @FormUrlEncoded
+    @POST("buka_pintu")
+    Call<ResponsePintu> buka_pintu(
+            @Field("userId") int userId
     );
 }

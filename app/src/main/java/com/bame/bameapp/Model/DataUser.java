@@ -9,6 +9,8 @@ public class DataUser {
     private String username;
     @SerializedName("password")
     private String password;
+    @SerializedName("status")
+    private int status;
     @SerializedName("loginTime")
     private String loginTime;
 
@@ -36,6 +38,14 @@ public class DataUser {
         this.password = password;
     }
 
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
     public String getLoginTime() {
         return loginTime;
     }
@@ -50,6 +60,7 @@ public class DataUser {
                 "userId=" + userId +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", status='" + status + '\'' +
                 ", loginTime='" + loginTime + '\'' +
                 '}';
     }

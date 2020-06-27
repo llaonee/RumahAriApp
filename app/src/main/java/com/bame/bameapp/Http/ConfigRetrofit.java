@@ -11,7 +11,7 @@ public class ConfigRetrofit {
 
     public static Retrofit getRetrofit(){
 
-        return new Retrofit.Builder().baseUrl("http://ninebala.000webhostapp.com/index.php/Api/")
+        return new Retrofit.Builder().baseUrl("http://rumahari.mamminasa.com/index.php/Api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
