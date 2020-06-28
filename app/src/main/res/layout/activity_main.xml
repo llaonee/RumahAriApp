@@ -32,18 +32,41 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    app:cardCornerRadius="10dp">
-                    <TextView
-                        android:id="@+id/tvStatus"
+                    android:layout_height="120dp"
+                    app:cardCornerRadius="10dp"
+                    android:clickable="true"
+                    android:id="@+id/bStatus"
+                    android:foreground="?android:attr/selectableItemBackground">>
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:imeOptions="actionUnspecified"
-                        android:padding="12dp"
-                        android:text="terbuka"
-                        android:textSize="25sp"
-                        android:singleLine="true"
-                        android:gravity="center"/>
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tvUsername"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:imeOptions="actionUnspecified"
+                            android:paddingTop="12dp"
+                            android:paddingRight="12dp"
+                            android:paddingLeft="12dp"
+                            tools:text="Ari"
+                            android:textSize="25sp"
+                            android:singleLine="true"
+                            android:gravity="center"/>
+                        <TextView
+                            android:id="@+id/tvStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:imeOptions="actionUnspecified"
+                            android:paddingRight="12dp"
+                            android:paddingLeft="12dp"
+                            android:paddingBottom="12dp"
+                            tools:text="2020;09;09"
+                            android:textSize="25sp"
+                            android:singleLine="true"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
                 <RelativeLayout
                     android:layout_width="match_parent"

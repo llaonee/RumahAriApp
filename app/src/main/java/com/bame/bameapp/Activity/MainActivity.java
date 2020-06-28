@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 
@@ -18,19 +19,33 @@ import com.bame.bameapp.Model.ResponsePintu;
 import com.bame.bameapp.R;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends BaseApp {
-    CardView bPintu;
+    CardView bPintu, bStatus;
+    TextView tvUsername, tvStatus;
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        bStatus = findViewById(R.id.bStatus);
         bPintu = findViewById(R.id.bPintu);
+        tvUsername = findViewById(R.id.tvUsername);
+        tvStatus = findViewById(R.id.tvStatus);
+        tvUsername.setText(sesi.getUsername());
+        bStatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, HistoryPintu.class));
+            }
+        });
 
         bPintu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +60,9 @@ public class MainActivity extends BaseApp {
                             boolean result = response.body().isStatus();
                             String pesan = response.body().getPesan();
                             if (result == true) {
+                                Date HariSekarang = new Date( );
+                                SimpleDateFormat ft = new SimpleDateFormat("yyyy.MM.dd ' ' hh:mm:ss ");
+                                tvStatus.setText(ft.format(HariSekarang));
                                 Snackbar.make(v, "Berhasil", Snackbar.LENGTH_LONG)
                                         .setAction("Action", null).show();
 

@@ -7,6 +7,8 @@ public class DataAktivitasPintu {
     private int idAktivitas;
     @SerializedName("userId")
     private int userId;
+    @SerializedName("username")
+    private String username;
     @SerializedName("waktuBuka")
     private String waktuBuka;
 
@@ -34,11 +36,20 @@ public class DataAktivitasPintu {
         this.waktuBuka = waktuBuka;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     @Override
     public String toString() {
         return "DataAktivitasPintu{" +
                 "idAktivitas=" + idAktivitas +
                 ", userId=" + userId +
+                ", username='" + username + '\'' +
                 ", waktuBuka='" + waktuBuka + '\'' +
                 '}';
     }
