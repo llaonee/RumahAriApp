@@ -19,7 +19,6 @@ import com.bame.bameapp.R;
 
 import java.util.List;
 
-import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -28,19 +27,12 @@ public class Login extends BaseApp {
 
     String username,password;
     EditText etPassword, etUsername;
-//    @BindView(R.id.etUsername)
-//    EditText etUsername;
-//    @BindView((R.id.etPassword))
-//    EditText etPassword;
     Button bLogin;
-//    @BindView(R.id.bLogin)
-//    Button btnSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-//        ButterKnife.bind(this);
 
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
@@ -96,9 +88,6 @@ public class Login extends BaseApp {
             }
         });
 
-    }
-    @OnClick(R.id.bLogin)
-    public void onViewClicked() {
     }
 
 }
