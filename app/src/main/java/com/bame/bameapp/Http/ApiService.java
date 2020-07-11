@@ -24,11 +24,17 @@ public interface ApiService {
     );
 
     @FormUrlEncoded
-    @POST("buka_pintu")
-    Call<ResponsePintu> buka_pintu(
+    @POST("pintu")
+    Call<ResponsePintu> pintu(
             @Field("userId") int userId
     );
 
+    @FormUrlEncoded
+    @POST("update_pintu")
+    Call<ResponsePintu> update_pintu(
+            @Field("idPintu") int idPintu,
+            @Field("updatePintu") int updatePintu
+    );
     @FormUrlEncoded
     @POST("get_history")
     Call<ResponseAktivitasPintu> get_history(

@@ -20,6 +20,7 @@
             android:layout_height="match_parent"
             app:cardCornerRadius="20dp"
             android:layout_gravity="center"
+            app:cardBackgroundColor="#FFF7F7"
             android:layout_margin="20dp">
 
             <LinearLayout
@@ -35,6 +36,7 @@
                     android:layout_height="120dp"
                     app:cardCornerRadius="10dp"
                     android:clickable="true"
+                    app:cardBackgroundColor="#FFFFFF"
                     android:id="@+id/bStatus"
                     android:foreground="?android:attr/selectableItemBackground">>
                     <LinearLayout
@@ -80,7 +82,7 @@
                         android:id="@+id/bPintu"
                         app:cardCornerRadius="200dp"
                         app:cardElevation="7dp"
-                        app:cardBackgroundColor="#08D6F1"
+                        app:cardBackgroundColor="@color/colorPrimary"
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground">
                         <TextView
@@ -96,6 +98,8 @@
                             android:gravity="center"/>
                     </androidx.cardview.widget.CardView>
                 </RelativeLayout>
+
+
 
 
             </LinearLayout>

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 public class DataPintu {
     @SerializedName("idPintu")
     private int idPintu;
-    @SerializedName("statur")
+    @SerializedName("status")
     private int status;
 
     public int getIdPintu() {
