@@ -81,7 +81,7 @@ public class Login extends BaseApp {
                         @Override
                         public void onFailure(Call<ResponseLogin> call, Throwable t) {
 
-                            Log.d("error login : ", String.valueOf(t.getCause()));
+                            Log.d("error logind : ", String.valueOf(t.getCause()));
                         }
                     });
                 }

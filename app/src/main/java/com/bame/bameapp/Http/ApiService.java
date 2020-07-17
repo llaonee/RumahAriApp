@@ -2,6 +2,7 @@ package com.bame.bameapp.Http;
 
 
 import com.bame.bameapp.Model.ResponseAktivitasPintu;
+import com.bame.bameapp.Model.ResponseHistory;
 import com.bame.bameapp.Model.ResponseLogin;
 import com.bame.bameapp.Model.ResponsePintu;
 
@@ -38,6 +39,12 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("get_history")
     Call<ResponseAktivitasPintu> get_history(
+            @Field("userId") int userId
+    );
+
+    @FormUrlEncoded
+    @POST("getAktivitas")
+    Call<ResponseHistory> getAktivitas(
             @Field("userId") int userId
     );
 }

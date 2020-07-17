@@ -125,17 +125,13 @@
             android:orientation="horizontal"
             android:padding="15dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tidak punya akun ? " />
 
             <TextView
                 android:id="@+id/tvRegisterLink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:text="Register Here"
+                android:text="Copyright by Ari Sabma"
                 android:textColor="#458CC3" />
         </LinearLayout>
     </LinearLayout>

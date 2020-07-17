@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="PINTU"
+            android:text="Informasi"
             android:textStyle="bold"
             android:textSize="20dp"
             android:textColor="#FFFFFF"/>
@@ -42,17 +42,33 @@
         android:textColor="#ff000000"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:id="@+id/btn_dialog"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
         android:layout_below="@+id/text_dialog"
         android:layout_marginBottom="20dp"
-        android:background="@color/colorPrimary"
-        android:layout_centerHorizontal="true"
-        android:textColor="#ffffffff" />
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_bluetooth"
+            android:background="@color/colorPrimary"
+            android:layout_weight="1"
+            android:textColor="#ffffffff"
+            android:layout_marginHorizontal="5dp"
+            android:text="Bluetooth"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_weight="1"
+            android:id="@+id/btn_wifi"
+            android:textColor="#ffffffff"
+            android:layout_marginHorizontal="5dp"
+            android:text="wifi"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
 
